@@ -1,0 +1,35 @@
+.bill-generation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .bill-generation h3 {
+    margin-top: 0;
+  }
+  
+  .bill-generation p {
+    margin: 10px 0;
+  }
+  
+  .bill-generation select {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .bill-generation button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .bill-generation button:hover {
+    background-color: #0056b3;
+  }
+  

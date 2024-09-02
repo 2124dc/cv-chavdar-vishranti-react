@@ -101,3 +101,14 @@
 .operations-buttons .d-flex {
   align-items: center;
 }
+
+/* src/components/operationsButtons.css */
+
+.total-row {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+button {
+  margin-right: 10px;
+}

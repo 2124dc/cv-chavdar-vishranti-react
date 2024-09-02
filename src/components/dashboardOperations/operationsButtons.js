@@ -1,11 +1,11 @@
-// src/components/OperationsButtons.js
 import React, { useState } from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import DataTable from '../common/dataTable';
 import FoodItemModal from './FoodItemModal';
 import TableItemModal from './TableItemModal';
+import OrderModal from '../orderModal'; // New modal for orders
 import ConfirmDeleteModal from '../common/confirmDeleteModal';
-import './operationsButtons.css';  // Import custom CSS
+import './operationsButtons.css'; // Import custom CSS
 
 const OperationsButtons = () => {
   const [selectedOperation, setSelectedOperation] = useState(null);
@@ -62,14 +62,22 @@ const OperationsButtons = () => {
     handleCloseModal();
   };
 
-  const columns = selectedOperation === 'food' ? {
-    heading: 'Food Items',
-    headers: ['sr no', 'Name', 'foodType', 'price per Unit', 'isActive'],
-    fields: ['srNo', 'name', 'foodType', 'price', 'isActive']
-  } : {
-    heading: 'Table Data',
-    headers: ['sr no', 'currentStatus', 'tableArea', 'isActive', 'people Can seat'],
-    fields: ['srNo', 'currentStatus', 'tableArea', 'isActive', 'peopleCanSeat']
+  const columns = {
+    food: {
+      heading: 'Food Items',
+      headers: ['sr no', 'Name', 'foodType', 'price per Unit', 'isActive'],
+      fields: ['srNo', 'name', 'foodType', 'price', 'isActive']
+    },
+    table: {
+      heading: 'Table Data',
+      headers: ['sr no', 'currentStatus', 'tableArea', 'isActive', 'people Can seat'],
+      fields: ['srNo', 'currentStatus', 'tableArea', 'isActive', 'peopleCanSeat']
+    },
+    order: {
+      heading: 'Orders',
+      headers: ['sr no', 'item name', 'qty', 'pricePerUnit', 'total price', 'edit', 'delete'],
+      fields: ['srNo', 'itemName', 'qty', 'pricePerUnit', 'totalPrice']
+    }
   };
 
   return (
@@ -88,6 +96,12 @@ const OperationsButtons = () => {
           Manage Table Items
         </Button>
         <Button
+          variant={selectedOperation === 'order' ? 'primary' : 'secondary'}
+          onClick={() => handleButtonClick('order')}
+        >
+          Manage Orders
+        </Button>
+        <Button
           variant={selectedOperation === 'logo' ? 'primary' : 'secondary'}
           onClick={() => handleButtonClick('logo')}
         >
@@ -98,7 +112,7 @@ const OperationsButtons = () => {
       {selectedOperation && selectedOperation !== 'logo' && (
         <DataTable
           data={data}
-          columns={columns}
+          columns={columns[selectedOperation]}
           onEdit={handleEdit}
           onDelete={handleShowDeleteConfirm}
           onAdd={handleAdd}
@@ -124,6 +138,15 @@ const OperationsButtons = () => {
           onSave={handleSave}
         />
       )}
+      {(modalType === 'add' || modalType === 'edit') && selectedOperation === 'order' && (
+        <OrderModal
+          show={showModal}
+          onHide={handleCloseModal}
+          type={modalType}
+          item={selectedItem}
+          onSave={handleSave}
+        />
+      )}
       {showDeleteConfirm && (
         <ConfirmDeleteModal
           show={showDeleteConfirm}
@@ -138,7 +161,6 @@ const OperationsButtons = () => {
 
 // Dummy function for data retrieval
 const getDataForOperation = (operation) => {
-  // Replace with actual data retrieval logic
   if (operation === 'food') {
     return [
       { srNo: 1, name: 'Pizza', foodType: 'Main Course', price: 10, isActive: true },
@@ -148,6 +170,11 @@ const getDataForOperation = (operation) => {
     return [
       { srNo: 1, currentStatus: 'Available', tableArea: 'Patio', isActive: true, peopleCanSeat: 4 },
       { srNo: 2, currentStatus: 'Occupied', tableArea: 'Indoor', isActive: false, peopleCanSeat: 2 },
+    ];
+  } else if (operation === 'order') {
+    return [
+      { srNo: 1, itemName: 'Pizza', qty: 2, pricePerUnit: 10, totalPrice: 20 },
+      { srNo: 2, itemName: 'Burger', qty: 1, pricePerUnit: 5, totalPrice: 5 },
     ];
   }
   return [];

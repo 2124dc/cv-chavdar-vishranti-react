@@ -1,53 +1,42 @@
-// src/components/DataTable.js
+// src/common/DataTable.js
 import React from 'react';
-import { Button, Table } from 'react-bootstrap';
 
-const DataTable = ({ data, columns, onEdit, onDelete, onAdd }) => {
+const DataTable = ({ data = [], columns, onEdit, onDelete, onAdd }) => {
+  if (!data || !Array.isArray(data)) {
+    console.error('DataTable received invalid data:', data);
+    return null;
+  }
+
   return (
     <div>
-      <div className="d-flex justify-content-between mb-3">
-        <h4>{columns.heading}</h4>
-        <Button
-          variant="success"
-          onClick={onAdd}
-        >
-          Add item/table
-        </Button>
-      </div>
-      <Table striped bordered hover>
+      <table>
         <thead>
           <tr>
-            {columns.headers.map((header, index) => (
-              <th key={index}>{header}</th>
+            {columns.map(col => (
+              <th key={col.key}>{col.label}</th>
             ))}
-            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           {data.map((item, index) => (
             <tr key={index}>
-              {columns.fields.map((field, fieldIndex) => (
-                <td key={fieldIndex}>{item[field]}</td>
+              {columns.map(col => (
+                <td key={col.key}>{item[col.key]}</td>
               ))}
               <td>
-                <Button
-                  variant="warning"
-                  onClick={() => onEdit(item)}
-                >
-                  Edit
-                </Button>
-                <Button
-                  variant="danger"
-                  className="ms-2"
-                  onClick={() => onDelete(item)}
-                >
-                  Delete
-                </Button>
+                <button onClick={() => onEdit(item)}>Edit</button>
+                <button onClick={() => onDelete(item)}>Delete</button>
               </td>
             </tr>
           ))}
+          {data.length > 0 && (
+            <tr>
+              <td colSpan={columns.length + 1}>Total Amount: {data.reduce((acc, curr) => acc + curr.totalPrice, 0)}</td>
+            </tr>
+          )}
         </tbody>
-      </Table>
+      </table>
+      <button onClick={onAdd}>Add Record</button>
     </div>
   );
 };
