@@ -1,7 +1,7 @@
 // src/pages/Login.js
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { login } from '../features/auth/authSlice';
+import { login } from '../../features/auth/authSlice';
 import './login.css'; // Custom styles for additional tweaks
 
 const Login = () => {

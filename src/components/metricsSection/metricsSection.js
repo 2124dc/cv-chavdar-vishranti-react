@@ -1,6 +1,6 @@
 // src/components/MetricsSection.js
 import React from 'react';
-import NumberSpinner from './numberSpinner';
+import NumberSpinner from '../numberSpinner/numberSpinner';
 import './metricsSection.css'; // Import custom CSS
 
 const MetricsSection = ({ title, metrics }) => {

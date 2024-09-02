@@ -1,7 +1,7 @@
 // src/pages/DashboardHome.js
 import React from 'react';
-import TableStatus from '../components/tableStatus';
-import MetricsSection from '../components/metricsSection';
+import TableStatus from '../tableStatus/tableStatus';
+import MetricsSection from '../metricsSection/metricsSection';
 import './dashboardHome.css'; // Import custom CSS
 
 const DashboardHome = () => {

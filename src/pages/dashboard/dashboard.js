@@ -1,11 +1,11 @@
 // src/pages/Dashboard.js
 import React, { useState } from 'react';
-import Header from '../components/header';
-import Footer from '../components/footer';
-import Sidebar from '../components/sidebar';
-import OperationsButtons from '../components/operationsButtons';
+import Header from '../../components/header/header';
+import Footer from '../../components/footer/footer';
+import Sidebar from '../../components/sidebar/sidebar';
+import OperationsButtons from '../../components/dashboardOperations/operationsButtons';
 import './dashboard.css';
-import DashboardHome from '../components/dashboardHome';
+import DashboardHome from '../../components/dashboardHome/dashboardHome';
 
 const Dashboard = () => {
   const [selectedMenu, setSelectedMenu] = useState('Home');

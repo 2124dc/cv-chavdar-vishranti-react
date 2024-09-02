@@ -1,10 +1,10 @@
 // src/components/OperationsButtons.js
 import React, { useState } from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap';
-import DataTable from './dataTable';
+import DataTable from '../common/dataTable';
 import FoodItemModal from './FoodItemModal';
 import TableItemModal from './TableItemModal';
-import ConfirmDeleteModal from './confirmDeleteModal';
+import ConfirmDeleteModal from '../common/confirmDeleteModal';
 import './operationsButtons.css';  // Import custom CSS
 
 const OperationsButtons = () => {
