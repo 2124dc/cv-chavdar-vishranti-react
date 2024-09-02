@@ -1,0 +1,8 @@
+/* src/components/NumberSpinner.css */
+.number-spinner {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007bff; /* Blue color for the text */
+    text-align: center;
+  }
+  

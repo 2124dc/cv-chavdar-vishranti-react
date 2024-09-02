@@ -1,0 +1,104 @@
+/* src/components/OperationsButtons.css
+.operations-buttons {
+  padding: 20px;
+}
+
+.operations-buttons .btn-group {
+  display: flex;
+  justify-content: space-around;
+}
+
+.operations-buttons .btn {
+  flex: 1;
+  margin: 0 5px;
+}
+
+.operations-buttons .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.operations-buttons .btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.operations-buttons .btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.operations-buttons .btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.operations-buttons .btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.operations-buttons .table {
+  margin-top: 20px;
+}
+
+.operations-buttons h4 {
+  margin: 0;
+}
+
+.operations-buttons .d-flex {
+  align-items: center;
+}
+
+.operations-buttons .btn-success {
+  margin-left: auto;
+} */
+
+
+/* src/components/OperationsButtons.css */
+.operations-buttons {
+  padding: 20px;
+}
+
+.operations-buttons .btn-group {
+  display: flex;
+  justify-content: space-around;
+}
+
+.operations-buttons .btn {
+  /* flex: 1; */
+  margin: 0 5px;
+}
+
+.operations-buttons .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.operations-buttons .btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.operations-buttons .btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.operations-buttons .btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.operations-buttons .btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.operations-buttons .table {
+  margin-top: 20px;
+}
+
+.operations-buttons .d-flex {
+  align-items: center;
+}
