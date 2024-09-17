@@ -12,4 +12,85 @@
     font-size: 0.875rem;
     margin: 0;
   }
+
+  /* src/components/header.css */
+.profile-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-section button {
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+
+/* src/components/header.css */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.header-right .dropdown-toggle .fa-user-circle {
+  margin-right: 10px;
+}
+
+.header-right .dropdown-menu {
+  min-width: 200px;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-icon {
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.profile-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f1f1f1;
+}
+
+
   
