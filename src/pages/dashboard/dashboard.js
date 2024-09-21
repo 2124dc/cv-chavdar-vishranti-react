@@ -10,14 +10,14 @@ import DashboardHome from '../../components/dashboardHome/dashboardHome';
 
 const Dashboard = () => {
   const [selectedMenu, setSelectedMenu] = useState('Home');
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      navigate('/login'); // Redirect to login page if no token is found
-    }
-  }, [navigate]);
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token');
+  //   if (!token) {
+  //     navigate('/login'); // Redirect to login page if no token is found
+  //   }
+  // }, [navigate]);
 
   const renderContent = () => {
     switch (selectedMenu) {
